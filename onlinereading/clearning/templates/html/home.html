@@ -1,0 +1,33 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block title %} C Programming {% endblock %}
+{% block content %}
+<script type="text/javascript" src="{% static 'js/sample.js' %}"></script>
+<div class="container text-center">
+	<img src="{% static 'images/c1.jpg' %}" width="80%" height="50%">
+    <b><h1>WELCOME TO C LEARNING TUTORIALS</h1></b>
+    </ul>
+    <i>The most important benefit of the C programming language, is that it recognised worldwide and used in a multitude of applications, including advanced scientific systems and operating systems. Another important benefit of learning the C language, is that it is the base language of all advanced computer languages.</i>
+
+    <div class="container text-center" >
+    	<h3> BENEFITS OF LEARNING C  LANGUAGE</h3>
+    		<div>
+    		<i>C is a procedural programming language. It was initially developed by Dennis Ritchie between 1969 and 1973. It was mainly developed as a system programming language to write operating system. The main features of C language include low-level access to memory, simple set of keywords, and clean style, these features make C language suitable for system programming like operating system or compiler development.</i>
+    	     </div>
+    	     <div>
+    		<i>
+    			Learning C programming has lot of benefits, but the foremost thing in which it helps is to understand the underlying architecture of how things works?
+    		</i>
+    		</div>
+    		<div>
+    	
+    		<i>Consider a situation where a person learns to drive a Car. In this modern era with advancement in technology, we have many options when it comes to buying car. There are cars with auto-driving mode, auto gear change features etc which reduces the manual overheads and makes driving the car easier. Suppose the person learns driving on a auto-gear change enabled car. After learning driving, the person applied for a driving licence for which he need to pass a driving test. The driving test is now on a manual car with no auto-gear change feature. The person was even not able to answer some basic questions related to gears as he was not even aware of it and eventually ended up getting disqualified.
+    		</i>
+    		</div>
+    		<div>
+    		<i>Learning C has a similar benefit. If the person had learned driving on a manual car, he could have easily driven the automatic car as well. Similarly, if a person learns C programming first, it will help him to learn any modern programming language as well. As learning C help to understand a lot of underlying architecture of operating system. Like, pointers, working with memory locations etc.</i>
+    	    </div>
+    </div>
+     <a href="{% url 'strt' %}" class="btn md btn-success ">start learning</a>
+</div> 
+{% endblock %}

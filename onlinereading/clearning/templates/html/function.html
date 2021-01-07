@@ -1,0 +1,107 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block title %} C Learning {% endblock %}
+{% block content %}
+<div class="container">
+   <h2>Function Declarations</h2>
+    <p>A function <b>declaration</b> tells the compiler about a function name and how to call the function. The actual body of the function can be defined separately.</p>
+   <p>A function declaration has the following parts &minus;</p>
+   <div class="jumbotron">
+             <pre >
+        return_type function_name( parameter list );
+             </pre>
+    </div>
+   <p>For the above defined function max(), the function declaration is as follows &minus;</p>
+   <div class="jumbotron">
+    <pre >
+   int max(int num1, int num2);
+   </pre>
+   </div>
+    <p>Parameter names are not important in function declaration only their type is required, so the following is also a valid declaration &minus;</p>
+    <div class="jumbotron">
+   <pre >
+   int max(int, int);
+    </pre>
+ </div>
+   <p>Function declaration is required when you define a function in one source file and you call that function in another file. In such case, you should declare the function at the top of the file calling the function.</p>
+    <h2>Calling a Function</h2>
+    <p>While creating a C function, you give a definition of what the function has to do. To use a function, you will have to call that function to perform the defined task.</p>
+   <p>When a program calls a function, the program control is transferred to the called function. A called function performs a defined task and when its return statement is executed or when its function-ending closing brace is reached, it returns the program control back to the main program.</p>
+   <p>To call a function, you simply need to pass the required parameters along with the function name, and if the function returns a value, then you can store the returned value. For example &minus;</p>
+    <h3> example program</h3>
+    <div class="jumbotron">
+     <pre>
+  #include &lt;stdio.h&gt;
+ 
+/* function declaration */
+int max(int num1, int num2);
+ 
+int main () {
+
+   /* local variable definition */
+   int a = 100;
+   int b = 200;
+   int ret;
+ 
+   /* calling a function to get max value */
+   ret = max(a, b);
+ 
+   printf( "Max value is : %d\n", ret );
+ 
+   return 0;
+}
+ 
+/* function returning the max between two numbers */
+int max(int num1, int num2) {
+
+   /* local variable declaration */
+   int result;
+ 
+   if (num1 &gt; num2)
+      result = num1;
+   else
+      result = num2;
+ 
+   return result; 
+}
+  </pre>
+  </div>
+  <p>We have kept max() along with main() and compiled the source code. While running the final executable, it would produce the following result &minus;</p>
+   <div class="jumbotron">
+ <pre >
+  Max value is : 200
+  </pre>
+  </div>
+  <h2>Function Arguments</h2>
+  <p>If a function is to use arguments, it must declare variables that accept the values of the arguments. These variables are called the <b>formal parameters</b> of the function.</p>
+ <p>Formal parameters behave like other local variables inside the function and are created upon entry into the function and destroyed upon exit.</p>
+  <p>While calling a function, there are two ways in which arguments can be passed to a function &minus;</p>
+  <table class="table table-bordered">
+  <tr>
+   <th style="text-align:center;">Sr.No.</th>
+   <th style="text-align:center;">Call Type &amp; Description</th>
+   </tr>
+  <tr>
+   <td class="ts">1</td> 
+   <td><h3>call by value</h3>
+    <p>This method copies the actual value of an argument into the formal parameter of the function. In this case, changes made to the parameter inside the function have no effect on the argument.</p></td> 
+   </tr>
+    <tr>
+    <td class="ts">2</td>
+   <td><h3>Call by reference</h3>
+   <p>This method copies the address of an argument into the formal parameter. Inside the function, the address is used to access the actual argument used in the call. This means that changes made to the parameter affect the argument.</p></td> 
+     </tr>
+  </table>
+    <p>By default, C uses <b>call by value</b> to pass arguments. In general, it means the code within a function cannot alter the arguments used to call the function.</p>
+</div>
+  <div class="row ml-5" >
+        <div class="col-7 text-left mb-5 ml-4">
+             <a href="{% url 'cdf' %}" class="btn btn-warning ">previous</a>
+        </div>
+           <div class="text-center">
+            <a href="{% url 'arry' %}" class="btn btn-warning md mt-2 mb-2">next</a>
+         </div>
+       </div>
+      
+
+{% endblock content %}
